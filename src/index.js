@@ -11,18 +11,15 @@ const encoder = new Encoder();
 const actualGamma = encoder.Gamma(input);
 const actualDelta = encoder.Delta(input);
 
-console.log(actualGamma, expectedGamma);
-console.log(`Gamma encode: ${actualGamma === expectedGamma ? 'OK' : 'ERROR'}`);
+console.log(`Gamma encode: ${actualGamma.toString() === expectedGamma ? 'OK' : 'ERROR'}`);
+console.log(`Delta encode: ${actualDelta.toString() === expectedDelta ? 'OK' : 'ERROR'}`);
 
-console.log(actualDelta, expectedDelta);
-console.log(`Delta encode: ${actualDelta === expectedDelta ? 'OK' : 'ERROR'}`);
+// const decoder = new Decoder();
+// const decodedGamma = decoder.Gamma(actualGamma);
+// const decodedDelta = decoder.Delta(actualDelta);
 
-const decoder = new Decoder();
-const decodedGamma = decoder.Gamma(actualGamma);
-const decodedDelta = decoder.Delta(actualDelta);
+// console.log(input, decodedGamma);
+// console.log(`Gamma decode: ${input === decodedGamma ? 'OK' : 'ERROR'}`);
 
-console.log(input, decodedGamma);
-console.log(`Gamma decode: ${input === decodedGamma ? 'OK' : 'ERROR'}`);
-
-console.log(input, decodedDelta);
-console.log(`Delta decode: ${input === decodedDelta ? 'OK' : 'ERROR'}`);
+// console.log(input, decodedDelta);
+// console.log(`Delta decode: ${input === decodedDelta ? 'OK' : 'ERROR'}`);

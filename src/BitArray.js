@@ -33,6 +33,10 @@ class BitArray {
 
     return this._bits[index];
   }
+
+  toString() {
+    return this._bits.join('');
+  }
 }
 
 module.exports = BitArray;

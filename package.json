@@ -1,0 +1,10 @@
+{
+  "name": "excorp-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "D3kion <dekion.dev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}

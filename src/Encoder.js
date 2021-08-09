@@ -61,9 +61,7 @@ class Encoder {
    */
   _toDeltas(numbers) {
     return numbers.map((num, idx, arr) => {
-      if (idx === 0) return num;
-
-      return num - arr[idx - 1];
+      return idx === 0 ? num : num - arr[idx - 1];
     });
   }
 

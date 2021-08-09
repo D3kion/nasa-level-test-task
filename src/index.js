@@ -14,12 +14,12 @@ const actualDelta = encoder.Delta(input);
 console.log(`Gamma encode: ${actualGamma.toString() === expectedGamma ? 'OK' : 'ERROR'}`);
 console.log(`Delta encode: ${actualDelta.toString() === expectedDelta ? 'OK' : 'ERROR'}`);
 
-// const decoder = new Decoder();
-// const decodedGamma = decoder.Gamma(actualGamma);
-// const decodedDelta = decoder.Delta(actualDelta);
+const decoder = new Decoder();
+const decodedGamma = decoder.Gamma(actualGamma);
+const decodedDelta = decoder.Delta(actualDelta);
+const isArrEq = (arr1, arr2) =>
+  arr1.length === arr2.length &&
+  arr1.reduce((prev, x, idx) => prev && x === arr2[idx], true);
 
-// console.log(input, decodedGamma);
-// console.log(`Gamma decode: ${input === decodedGamma ? 'OK' : 'ERROR'}`);
-
-// console.log(input, decodedDelta);
-// console.log(`Delta decode: ${input === decodedDelta ? 'OK' : 'ERROR'}`);
+console.log(`Gamma decode: ${isArrEq(input, decodedGamma) ? 'OK' : 'ERROR'}`);
+console.log(`Delta decode: ${isArrEq(input, decodedDelta) ? 'OK' : 'ERROR'}`);
